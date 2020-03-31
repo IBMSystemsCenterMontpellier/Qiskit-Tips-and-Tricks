@@ -1,0 +1,17 @@
+# how to retrieve calibration data from real backend for different dates 
+
+from qiskit import *
+provider=IBMQ.load_account(hub='<your hub>', , group='<your group>', project='<your project' )
+
+# let's use ibmq_vigo as example 
+backend=provider.get_backend('ibmq_vigo') 
+
+# let's retrieve data from January 25, 26 and 27  2020 
+from datetime import date
+dates = [date(2020, 1, 25), date(2020, 1, 26), date(2020, 1, 27)]
+calibrations = []
+
+for day in dates:
+    calibrations.append(backend.properties(datetime=day))
+
+print(calibrations)
