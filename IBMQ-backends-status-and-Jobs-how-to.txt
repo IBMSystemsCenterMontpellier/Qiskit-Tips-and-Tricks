@@ -3,7 +3,7 @@
 from qiskit import IBMQ
 
 IBMQ.load_account()
-provider = IBMQ.get_provider(hub='ibm-q-internal', group='support', project='core-team')
+provider = IBMQ.get_provider(hub='<your hub>', group='<your group>', project='<your project>')
 
 # Get all available and operational backends.
 available_backends = provider.backends(operational=True)
