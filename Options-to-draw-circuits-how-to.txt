@@ -1,0 +1,15 @@
+# How to draw the circuit in a new window 
+# "interactive=True" : when set true show the circuit in a new window
+
+%matplotlib  # must be set for interactive=True
+circuit.draw(output='mpl', interactive=True)
+
+# draw the circuit by omiting idle wires 
+circuit.draw(output='mpl', idle_wires=False)
+
+# draw the circuit and save it in polux file 
+circuit.draw(output='mpl', idle_wires=False , filename='polux')
+
+# draw the circuit and scale of image to draw (shrink if < 1)
+circuit.draw(output='mpl', idle_wires=False , filename='polux', scale=0.7)
+
