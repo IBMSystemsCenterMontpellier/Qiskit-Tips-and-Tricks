@@ -1,0 +1,23 @@
+# How to get the backends status and availability 
+
+from qiskit import IBMQ
+
+IBMQ.load_account()
+provider = IBMQ.get_provider(hub='ibm-q-internal', group='support', project='core-team')
+
+# Get all available and operational backends.
+available_backends = provider.backends(operational=True)
+
+# Fish out criteria to compare
+print("{0:20} {1:<10} {2:<10} ".format("Name","#Qubits","Pending jobs"))
+print("{0:20} {1:<10} {2:<10} ".format("++++","+++++++","++++++++++++"))
+
+for n in range(0, len(available_backends)):
+    available_backend = provider.get_backend(str(available_backends[n]))
+    print("{0:20} {1:<10} {2:<10}"
+          .format(available_backend.name(), 
+                    available_backend.configuration().n_qubits,
+                    available_backend.status().pending_jobs))
+    
+
+	
