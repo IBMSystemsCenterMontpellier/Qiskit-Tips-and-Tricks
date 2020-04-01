@@ -1,0 +1,7 @@
+# how to check your qiskit version 
+import qiskit
+qiskit.__qiskit_version__
+
+# How to check qiskit in a version table  
+import qiskit.tools.jupyter
+%qiskit_version_table
