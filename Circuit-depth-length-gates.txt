@@ -1,0 +1,6 @@
+# How to get the quantum circuit lenght and depth 
+circuit = QuantumCircuit(2, 2)
+
+print("This is the circuit depth" , circuit.depth())
+print("This is the circuit width" , circuit.width())
+print("Gates count in the circuit" , circuit.count_ops())
